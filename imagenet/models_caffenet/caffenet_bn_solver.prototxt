@@ -1,0 +1,22 @@
+net: "models/caffenet_bn_trainval.prototxt"
+
+test_iter: 500
+test_interval: 1000
+test_initialization: false
+
+base_lr: 0.1
+lr_policy: "stepdecr"
+gamma: 0.04
+stepsize: 8000
+max_iter: 220000
+min_lr: 0.001
+
+display: 20
+average_loss: 20
+
+momentum: 0.9
+weight_decay: 0.0001
+
+snapshot: 10000
+snapshot_prefix: "external/exp/models/caffenet_bn"
+solver_mode: GPU

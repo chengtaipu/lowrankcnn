@@ -1,0 +1,23 @@
+net: "models_vgg/vgg_approx_trainval_3.prototxt"
+test_iter: 500
+test_interval: 1000
+test_initialization: true
+
+iter_size: 2
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 50000
+max_iter: 120000
+
+display: 20
+average_loss: 20
+
+momentum: 0.9
+weight_decay: 0.0005
+
+snapshot: 5000
+snapshot_prefix: "external/exp/models_vgg/vgg_approx_3"
+
+solver_mode: GPU
+richness: 20

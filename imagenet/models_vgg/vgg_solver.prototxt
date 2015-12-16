@@ -1,0 +1,22 @@
+net: "models_vgg/vgg_trainval.prototxt"
+test_iter: 5000
+test_interval: 1000
+test_initialization: false
+
+iter_size: 8
+base_lr: 0.01
+lr_policy: "step"
+gamma: 0.1
+stepsize: 50000
+max_iter: 120000
+
+display: 20
+average_loss: 20
+
+momentum: 0.9
+weight_decay: 0.0005
+
+snapshot: 5000
+snapshot_prefix: "external/exp/models_vgg/vgg"
+
+solver_mode: GPU

@@ -1,0 +1,21 @@
+net: "models/caffenet_lowrank_trainval.prototxt"
+
+test_iter: 500
+test_interval: 1000
+test_initialization: false
+
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 100000
+max_iter: 220000
+
+display: 20
+average_loss: 20
+
+momentum: 0.9
+weight_decay: 0.0005
+
+snapshot: 10000
+snapshot_prefix: "external/exp/models/caffenet_lowrank_approx_closed_form"
+solver_mode: GPU

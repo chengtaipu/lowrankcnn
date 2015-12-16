@@ -1,0 +1,1103 @@
+[0m-- ignore option data[0m	
+[0mnDonkeys[0m	[0;36m10[0m	[0;36m2[0m	
+[0m-- ignore option optimState[0m	
+[0m-- ignore option cache[0m	
+[0m-- ignore option retrain[0m	
+{
+  LR : [0;36m0[0m
+  batchSize : [0;36m128[0m
+  data : [1;30m"[0m[0;32m/media/bicmr/3bcbd2f9-0bb1-43d3-ab2a-31275b512df3/cifar10/[0m[1;30m"[0m
+  epochSize : [0;36m500[0m
+  nDonkeys : [0;36m10[0m
+  save : [1;30m"[0m[0;32m/media/bicmr/3bcbd2f9-0bb1-43d3-ab2a-31275b512df3/cifar/baseline_lowrank,nDonkeys=10/,MonAug1020:52:102015[0m[1;30m"[0m
+  optimState : [1;30m"[0m[0;32mnone[0m[1;30m"[0m
+  nGPU : [0;36m1[0m
+  epochNumber : [0;36m1[0m
+  momentum : [0;36m0.9[0m
+  cache : [1;30m"[0m[0;32m/media/bicmr/3bcbd2f9-0bb1-43d3-ab2a-31275b512df3/cifar[0m[1;30m"[0m
+  netType : [1;30m"[0m[0;32mbaseline_lowrank[0m[1;30m"[0m
+  nEpochs : [0;36m1000[0m
+  backend : [1;30m"[0m[0;32mcudnn[0m[1;30m"[0m
+  GPU : [0;36m1[0m
+  weightDecay : [0;36m0.0001[0m
+  manualSeed : [0;36m2[0m
+  retrain : [1;30m"[0m[0;32mnone[0m[1;30m"[0m
+}
+[0mSaving everything to: /media/bicmr/3bcbd2f9-0bb1-43d3-ab2a-31275b512df3/cifar/baseline_lowrank,nDonkeys=10/,MonAug1020:52:102015[0m	
+Starting donkey with id: 8 seed: 10
+Starting donkey with id: 5 seed: 7
+Starting donkey with id: 6 seed: 8
+Starting donkey with id: 10 seed: 12
+Starting donkey with id: 1 seed: 3
+Starting donkey with id: 3 seed: 5
+Starting donkey with id: 2 seed: 4
+Starting donkey with id: 7 seed: 9
+Starting donkey with id: 9 seed: 11
+Starting donkey with id: 4 seed: 6
+Loading train metadata from cache
+Loading train metadata from cache
+Loading train metadata from cache
+Loading train metadata from cache
+Loading train metadata from cache
+Loading test metadata from cache
+Loading test metadata from cache
+Loading test metadata from cache
+Loaded mean and std from cache.
+Loading train metadata from cache
+Loading test metadata from cache
+Loaded mean and std from cache.
+Loading train metadata from cache
+Loaded mean and std from cache.
+Loading test metadata from cache
+Loading train metadata from cache
+Loaded mean and std from cache.
+Loaded mean and std from cache.
+Loading test metadata from cache
+Loading test metadata from cache
+Loaded mean and std from cache.
+Loaded mean and std from cache.
+Loading test metadata from cache
+Loading train metadata from cache
+Loaded mean and std from cache.
+Loading test metadata from cache
+Loading train metadata from cache
+Loaded mean and std from cache.
+Loading test metadata from cache
+Loaded mean and std from cache.
+[0mnClasses: [0m	[0;36m10[0m	
+[0mnTest: [0m	[0;36m10000[0m	
+[0m=> Creating model from file: models/baseline_lowrank_cudnn.lua[0m	
+[0m=> Model[0m	
+nn.Sequential {
+  [input -> (1) -> (2) -> output]
+  (1): nn.Sequential {
+    [input -> (1) -> (2) -> (3) -> (4) -> (5) -> (6) -> (7) -> (8) -> (9) -> (10) -> (11) -> (12) -> (13) -> (14) -> output]
+    (1): cudnn.SpatialConvolution(3 -> 10, 1x5, 1,1, 0,2)
+    (2): cudnn.SpatialConvolution(10 -> 96, 5x1, 1,1, 2,0)
+    (3): cudnn.ReLU
+    (4): cudnn.SpatialMaxPooling
+    (5): cudnn.SpatialConvolution(96 -> 51, 1x5, 1,1, 0,2)
+    (6): cudnn.SpatialConvolution(51 -> 128, 5x1, 1,1, 2,0)
+    (7): cudnn.ReLU
+    (8): cudnn.SpatialMaxPooling
+    (9): cudnn.SpatialConvolution(128 -> 51, 1x5, 1,1, 0,2)
+    (10): cudnn.SpatialConvolution(51 -> 256, 5x1, 1,1, 2,0)
+    (11): cudnn.ReLU
+    (12): cudnn.SpatialMaxPooling
+    (13): cudnn.SpatialConvolution(256 -> 64, 1x1)
+    (14): cudnn.ReLU
+  }
+  (2): nn.Sequential {
+    [input -> (1) -> (2) -> (3) -> (4) -> (5) -> (6) -> (7) -> output]
+    (1): nn.View
+    (2): nn.Dropout(0.500000)
+    (3): nn.Linear(1024 -> 256)
+    (4): nn.Threshold
+    (5): nn.Dropout(0.500000)
+    (6): nn.Linear(256 -> 10)
+    (7): nn.LogSoftMax
+  }
+}
+[0m=> Criterion[0m	
+nn.ClassNLLCriterion
+[0m==> Converting model to CUDA[0m	
+[0mEpoch: [1][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 2.19 	 accuracy(%):	 top-1 17.10	learning rate:	 0.0100	[0m	
+[0mEpoch: [1][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 1.84 	 accuracy [Center](%):	 top-1 31.91	 [0m	
+[0mEpoch: [2][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 1.66 	 accuracy(%):	 top-1 37.70	learning rate:	 0.0100	[0m	
+[0mEpoch: [2][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 1.44 	 accuracy [Center](%):	 top-1 45.98	 [0m	
+[0mEpoch: [3][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 1.40 	 accuracy(%):	 top-1 48.23	learning rate:	 0.0100	[0m	
+[0mEpoch: [3][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 1.23 	 accuracy [Center](%):	 top-1 55.08	 [0m	
+[0mEpoch: [4][TRAINING SUMMARY] Total Time(s): 12.82	average loss (per batch): 1.23 	 accuracy(%):	 top-1 55.33	learning rate:	 0.0100	[0m	
+[0mEpoch: [4][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 1.14 	 accuracy [Center](%):	 top-1 58.35	 [0m	
+[0mEpoch: [5][TRAINING SUMMARY] Total Time(s): 12.77	average loss (per batch): 1.10 	 accuracy(%):	 top-1 60.76	learning rate:	 0.0100	[0m	
+[0mEpoch: [5][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 66.16	 [0m	
+[0mEpoch: [6][TRAINING SUMMARY] Total Time(s): 13.18	average loss (per batch): 0.99 	 accuracy(%):	 top-1 64.80	learning rate:	 0.0100	[0m	
+[0mEpoch: [6][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 69.51	 [0m	
+[0mEpoch: [7][TRAINING SUMMARY] Total Time(s): 13.09	average loss (per batch): 0.89 	 accuracy(%):	 top-1 68.70	learning rate:	 0.0100	[0m	
+[0mEpoch: [7][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 71.23	 [0m	
+[0mEpoch: [8][TRAINING SUMMARY] Total Time(s): 12.77	average loss (per batch): 0.81 	 accuracy(%):	 top-1 71.60	learning rate:	 0.0100	[0m	
+[0mEpoch: [8][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 71.89	 [0m	
+[0mEpoch: [9][TRAINING SUMMARY] Total Time(s): 12.80	average loss (per batch): 0.74 	 accuracy(%):	 top-1 74.11	learning rate:	 0.0100	[0m	
+[0mEpoch: [9][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.72 	 accuracy [Center](%):	 top-1 74.84	 [0m	
+[0mEpoch: [10][TRAINING SUMMARY] Total Time(s): 12.90	average loss (per batch): 0.68 	 accuracy(%):	 top-1 76.34	learning rate:	 0.0100	[0m	
+[0mEpoch: [10][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.69 	 accuracy [Center](%):	 top-1 75.82	 [0m	
+[0mEpoch: [11][TRAINING SUMMARY] Total Time(s): 12.92	average loss (per batch): 0.63 	 accuracy(%):	 top-1 78.02	learning rate:	 0.0100	[0m	
+[0mEpoch: [11][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.70 	 accuracy [Center](%):	 top-1 75.82	 [0m	
+[0mEpoch: [12][TRAINING SUMMARY] Total Time(s): 12.76	average loss (per batch): 0.59 	 accuracy(%):	 top-1 79.59	learning rate:	 0.0100	[0m	
+[0mEpoch: [12][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.67 	 accuracy [Center](%):	 top-1 77.08	 [0m	
+[0mEpoch: [13][TRAINING SUMMARY] Total Time(s): 12.80	average loss (per batch): 0.56 	 accuracy(%):	 top-1 80.77	learning rate:	 0.0100	[0m	
+[0mEpoch: [13][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.63 	 accuracy [Center](%):	 top-1 78.54	 [0m	
+[0mEpoch: [14][TRAINING SUMMARY] Total Time(s): 12.78	average loss (per batch): 0.52 	 accuracy(%):	 top-1 82.21	learning rate:	 0.0100	[0m	
+[0mEpoch: [14][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.66 	 accuracy [Center](%):	 top-1 77.62	 [0m	
+[0mEpoch: [15][TRAINING SUMMARY] Total Time(s): 12.78	average loss (per batch): 0.50 	 accuracy(%):	 top-1 82.93	learning rate:	 0.0100	[0m	
+[0mEpoch: [15][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.66 	 accuracy [Center](%):	 top-1 77.73	 [0m	
+[0mEpoch: [16][TRAINING SUMMARY] Total Time(s): 12.75	average loss (per batch): 0.47 	 accuracy(%):	 top-1 83.99	learning rate:	 0.0100	[0m	
+[0mEpoch: [16][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.65 	 accuracy [Center](%):	 top-1 78.17	 [0m	
+[0mEpoch: [17][TRAINING SUMMARY] Total Time(s): 12.73	average loss (per batch): 0.44 	 accuracy(%):	 top-1 84.73	learning rate:	 0.0100	[0m	
+[0mEpoch: [17][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.68 	 accuracy [Center](%):	 top-1 77.54	 [0m	
+[0mEpoch: [18][TRAINING SUMMARY] Total Time(s): 12.79	average loss (per batch): 0.42 	 accuracy(%):	 top-1 85.69	learning rate:	 0.0100	[0m	
+[0mEpoch: [18][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.68 	 accuracy [Center](%):	 top-1 78.04	 [0m	
+[0mEpoch: [19][TRAINING SUMMARY] Total Time(s): 12.76	average loss (per batch): 0.41 	 accuracy(%):	 top-1 86.26	learning rate:	 0.0100	[0m	
+[0mEpoch: [19][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.66 	 accuracy [Center](%):	 top-1 78.72	 [0m	
+[0mEpoch: [20][TRAINING SUMMARY] Total Time(s): 12.77	average loss (per batch): 0.38 	 accuracy(%):	 top-1 87.07	learning rate:	 0.0100	[0m	
+[0mEpoch: [20][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.64 	 accuracy [Center](%):	 top-1 79.48	 [0m	
+[0mEpoch: [21][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 0.38 	 accuracy(%):	 top-1 87.09	learning rate:	 0.0100	[0m	
+[0mEpoch: [21][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.60 	 accuracy [Center](%):	 top-1 80.09	 [0m	
+[0mEpoch: [22][TRAINING SUMMARY] Total Time(s): 12.76	average loss (per batch): 0.35 	 accuracy(%):	 top-1 88.06	learning rate:	 0.0100	[0m	
+[0mEpoch: [22][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.63 	 accuracy [Center](%):	 top-1 79.83	 [0m	
+[0mEpoch: [23][TRAINING SUMMARY] Total Time(s): 12.73	average loss (per batch): 0.34 	 accuracy(%):	 top-1 88.27	learning rate:	 0.0100	[0m	
+[0mEpoch: [23][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.62 	 accuracy [Center](%):	 top-1 80.26	 [0m	
+[0mEpoch: [24][TRAINING SUMMARY] Total Time(s): 12.82	average loss (per batch): 0.32 	 accuracy(%):	 top-1 89.01	learning rate:	 0.0100	[0m	
+[0mEpoch: [24][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.61 	 accuracy [Center](%):	 top-1 80.70	 [0m	
+[0mEpoch: [25][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 0.31 	 accuracy(%):	 top-1 89.27	learning rate:	 0.0100	[0m	
+[0mEpoch: [25][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.65 	 accuracy [Center](%):	 top-1 79.43	 [0m	
+[0mEpoch: [26][TRAINING SUMMARY] Total Time(s): 12.77	average loss (per batch): 0.30 	 accuracy(%):	 top-1 89.53	learning rate:	 0.0100	[0m	
+[0mEpoch: [26][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.64 	 accuracy [Center](%):	 top-1 80.23	 [0m	
+[0mEpoch: [27][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 0.28 	 accuracy(%):	 top-1 90.38	learning rate:	 0.0100	[0m	
+[0mEpoch: [27][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.67 	 accuracy [Center](%):	 top-1 80.34	 [0m	
+[0mEpoch: [28][TRAINING SUMMARY] Total Time(s): 12.76	average loss (per batch): 0.27 	 accuracy(%):	 top-1 90.80	learning rate:	 0.0100	[0m	
+[0mEpoch: [28][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.64 	 accuracy [Center](%):	 top-1 80.59	 [0m	
+[0mEpoch: [29][TRAINING SUMMARY] Total Time(s): 12.81	average loss (per batch): 0.27 	 accuracy(%):	 top-1 90.73	learning rate:	 0.0100	[0m	
+[0mEpoch: [29][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.64 	 accuracy [Center](%):	 top-1 80.08	 [0m	
+[0mEpoch: [30][TRAINING SUMMARY] Total Time(s): 12.76	average loss (per batch): 0.25 	 accuracy(%):	 top-1 91.39	learning rate:	 0.0100	[0m	
+[0mEpoch: [30][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.65 	 accuracy [Center](%):	 top-1 81.48	 [0m	
+[0mEpoch: [31][TRAINING SUMMARY] Total Time(s): 12.76	average loss (per batch): 0.25 	 accuracy(%):	 top-1 91.71	learning rate:	 0.0100	[0m	
+[0mEpoch: [31][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.72 	 accuracy [Center](%):	 top-1 80.00	 [0m	
+[0mEpoch: [32][TRAINING SUMMARY] Total Time(s): 12.78	average loss (per batch): 0.24 	 accuracy(%):	 top-1 91.77	learning rate:	 0.0100	[0m	
+[0mEpoch: [32][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.66 	 accuracy [Center](%):	 top-1 80.86	 [0m	
+[0mEpoch: [33][TRAINING SUMMARY] Total Time(s): 12.81	average loss (per batch): 0.25 	 accuracy(%):	 top-1 91.68	learning rate:	 0.0100	[0m	
+[0mEpoch: [33][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.73 	 accuracy [Center](%):	 top-1 79.65	 [0m	
+[0mEpoch: [34][TRAINING SUMMARY] Total Time(s): 12.78	average loss (per batch): 0.23 	 accuracy(%):	 top-1 92.11	learning rate:	 0.0100	[0m	
+[0mEpoch: [34][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.70 	 accuracy [Center](%):	 top-1 80.68	 [0m	
+[0mEpoch: [35][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.22 	 accuracy(%):	 top-1 92.49	learning rate:	 0.0100	[0m	
+[0mEpoch: [35][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.70 	 accuracy [Center](%):	 top-1 80.99	 [0m	
+[0mEpoch: [36][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.22 	 accuracy(%):	 top-1 92.50	learning rate:	 0.0100	[0m	
+[0mEpoch: [36][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.67 	 accuracy [Center](%):	 top-1 81.20	 [0m	
+[0mEpoch: [37][TRAINING SUMMARY] Total Time(s): 12.85	average loss (per batch): 0.22 	 accuracy(%):	 top-1 92.70	learning rate:	 0.0100	[0m	
+[0mEpoch: [37][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.69 	 accuracy [Center](%):	 top-1 81.18	 [0m	
+[0mEpoch: [38][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 0.21 	 accuracy(%):	 top-1 92.92	learning rate:	 0.0100	[0m	
+[0mEpoch: [38][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.66 	 accuracy [Center](%):	 top-1 80.73	 [0m	
+[0mEpoch: [39][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 0.21 	 accuracy(%):	 top-1 92.94	learning rate:	 0.0100	[0m	
+[0mEpoch: [39][TESTING SUMMARY] Total Time(s): 1.10 	average loss (per batch): 0.70 	 accuracy [Center](%):	 top-1 80.97	 [0m	
+[0mEpoch: [40][TRAINING SUMMARY] Total Time(s): 12.76	average loss (per batch): 0.20 	 accuracy(%):	 top-1 93.23	learning rate:	 0.0100	[0m	
+[0mEpoch: [40][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.71 	 accuracy [Center](%):	 top-1 80.49	 [0m	
+[0mEpoch: [41][TRAINING SUMMARY] Total Time(s): 12.73	average loss (per batch): 0.19 	 accuracy(%):	 top-1 93.57	learning rate:	 0.0100	[0m	
+[0mEpoch: [41][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.68 	 accuracy [Center](%):	 top-1 81.44	 [0m	
+[0mEpoch: [42][TRAINING SUMMARY] Total Time(s): 12.80	average loss (per batch): 0.19 	 accuracy(%):	 top-1 93.65	learning rate:	 0.0100	[0m	
+[0mEpoch: [42][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.70 	 accuracy [Center](%):	 top-1 81.22	 [0m	
+[0mEpoch: [43][TRAINING SUMMARY] Total Time(s): 12.81	average loss (per batch): 0.19 	 accuracy(%):	 top-1 93.62	learning rate:	 0.0100	[0m	
+[0mEpoch: [43][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.72 	 accuracy [Center](%):	 top-1 81.07	 [0m	
+[0mEpoch: [44][TRAINING SUMMARY] Total Time(s): 12.75	average loss (per batch): 0.18 	 accuracy(%):	 top-1 94.00	learning rate:	 0.0100	[0m	
+[0mEpoch: [44][TESTING SUMMARY] Total Time(s): 0.89 	average loss (per batch): 0.73 	 accuracy [Center](%):	 top-1 80.93	 [0m	
+[0mEpoch: [45][TRAINING SUMMARY] Total Time(s): 12.75	average loss (per batch): 0.18 	 accuracy(%):	 top-1 93.85	learning rate:	 0.0100	[0m	
+[0mEpoch: [45][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.73 	 accuracy [Center](%):	 top-1 81.14	 [0m	
+[0mEpoch: [46][TRAINING SUMMARY] Total Time(s): 12.77	average loss (per batch): 0.18 	 accuracy(%):	 top-1 93.99	learning rate:	 0.0100	[0m	
+[0mEpoch: [46][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.73 	 accuracy [Center](%):	 top-1 81.50	 [0m	
+[0mEpoch: [47][TRAINING SUMMARY] Total Time(s): 12.81	average loss (per batch): 0.17 	 accuracy(%):	 top-1 94.12	learning rate:	 0.0100	[0m	
+[0mEpoch: [47][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.70 	 accuracy [Center](%):	 top-1 80.81	 [0m	
+[0mEpoch: [48][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.18 	 accuracy(%):	 top-1 93.95	learning rate:	 0.0100	[0m	
+[0mEpoch: [48][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.72 	 accuracy [Center](%):	 top-1 81.07	 [0m	
+[0mEpoch: [49][TRAINING SUMMARY] Total Time(s): 12.82	average loss (per batch): 0.17 	 accuracy(%):	 top-1 94.41	learning rate:	 0.0100	[0m	
+[0mEpoch: [49][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.74 	 accuracy [Center](%):	 top-1 81.15	 [0m	
+[0mEpoch: [50][TRAINING SUMMARY] Total Time(s): 12.73	average loss (per batch): 0.17 	 accuracy(%):	 top-1 94.20	learning rate:	 0.0100	[0m	
+[0mEpoch: [50][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.68 	 accuracy [Center](%):	 top-1 81.29	 [0m	
+[0mEpoch: [51][TRAINING SUMMARY] Total Time(s): 12.79	average loss (per batch): 0.16 	 accuracy(%):	 top-1 94.60	learning rate:	 0.0100	[0m	
+[0mEpoch: [51][TESTING SUMMARY] Total Time(s): 1.01 	average loss (per batch): 0.71 	 accuracy [Center](%):	 top-1 81.14	 [0m	
+[0mEpoch: [52][TRAINING SUMMARY] Total Time(s): 12.79	average loss (per batch): 0.15 	 accuracy(%):	 top-1 94.77	learning rate:	 0.0100	[0m	
+[0mEpoch: [52][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.74 	 accuracy [Center](%):	 top-1 81.50	 [0m	
+[0mEpoch: [53][TRAINING SUMMARY] Total Time(s): 12.78	average loss (per batch): 0.15 	 accuracy(%):	 top-1 95.04	learning rate:	 0.0100	[0m	
+[0mEpoch: [53][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.76 	 accuracy [Center](%):	 top-1 81.18	 [0m	
+[0mEpoch: [54][TRAINING SUMMARY] Total Time(s): 12.72	average loss (per batch): 0.15 	 accuracy(%):	 top-1 94.93	learning rate:	 0.0100	[0m	
+[0mEpoch: [54][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 80.01	 [0m	
+[0mEpoch: [55][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 0.16 	 accuracy(%):	 top-1 94.65	learning rate:	 0.0100	[0m	
+[0mEpoch: [55][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.70 	 accuracy [Center](%):	 top-1 80.79	 [0m	
+[0mEpoch: [56][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.16 	 accuracy(%):	 top-1 94.76	learning rate:	 0.0100	[0m	
+[0mEpoch: [56][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.76 	 accuracy [Center](%):	 top-1 81.18	 [0m	
+[0mEpoch: [57][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.15 	 accuracy(%):	 top-1 94.95	learning rate:	 0.0100	[0m	
+[0mEpoch: [57][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.74 	 accuracy [Center](%):	 top-1 80.27	 [0m	
+[0mEpoch: [58][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 0.14 	 accuracy(%):	 top-1 95.20	learning rate:	 0.0100	[0m	
+[0mEpoch: [58][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.72 	 accuracy [Center](%):	 top-1 81.64	 [0m	
+[0mEpoch: [59][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.15 	 accuracy(%):	 top-1 94.93	learning rate:	 0.0100	[0m	
+[0mEpoch: [59][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.74 	 accuracy [Center](%):	 top-1 81.52	 [0m	
+[0mEpoch: [60][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 0.14 	 accuracy(%):	 top-1 95.13	learning rate:	 0.0100	[0m	
+[0mEpoch: [60][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.78 	 accuracy [Center](%):	 top-1 81.50	 [0m	
+[0mEpoch: [61][TRAINING SUMMARY] Total Time(s): 12.72	average loss (per batch): 0.07 	 accuracy(%):	 top-1 97.86	learning rate:	 0.0010	[0m	
+[0mEpoch: [61][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.74 	 accuracy [Center](%):	 top-1 82.99	 [0m	
+[0mEpoch: [62][TRAINING SUMMARY] Total Time(s): 12.76	average loss (per batch): 0.04 	 accuracy(%):	 top-1 98.63	learning rate:	 0.0010	[0m	
+[0mEpoch: [62][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.78 	 accuracy [Center](%):	 top-1 83.34	 [0m	
+[0mEpoch: [63][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 0.03 	 accuracy(%):	 top-1 98.86	learning rate:	 0.0010	[0m	
+[0mEpoch: [63][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.78 	 accuracy [Center](%):	 top-1 83.34	 [0m	
+[0mEpoch: [64][TRAINING SUMMARY] Total Time(s): 12.69	average loss (per batch): 0.03 	 accuracy(%):	 top-1 99.08	learning rate:	 0.0010	[0m	
+[0mEpoch: [64][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.33	 [0m	
+[0mEpoch: [65][TRAINING SUMMARY] Total Time(s): 12.80	average loss (per batch): 0.03 	 accuracy(%):	 top-1 99.13	learning rate:	 0.0010	[0m	
+[0mEpoch: [65][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.48	 [0m	
+[0mEpoch: [66][TRAINING SUMMARY] Total Time(s): 12.77	average loss (per batch): 0.02 	 accuracy(%):	 top-1 99.26	learning rate:	 0.0010	[0m	
+[0mEpoch: [66][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [67][TRAINING SUMMARY] Total Time(s): 12.75	average loss (per batch): 0.02 	 accuracy(%):	 top-1 99.34	learning rate:	 0.0010	[0m	
+[0mEpoch: [67][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.51	 [0m	
+[0mEpoch: [68][TRAINING SUMMARY] Total Time(s): 12.77	average loss (per batch): 0.02 	 accuracy(%):	 top-1 99.45	learning rate:	 0.0010	[0m	
+[0mEpoch: [68][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.47	 [0m	
+[0mEpoch: [69][TRAINING SUMMARY] Total Time(s): 12.78	average loss (per batch): 0.02 	 accuracy(%):	 top-1 99.38	learning rate:	 0.0010	[0m	
+[0mEpoch: [69][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.48	 [0m	
+[0mEpoch: [70][TRAINING SUMMARY] Total Time(s): 12.72	average loss (per batch): 0.02 	 accuracy(%):	 top-1 99.48	learning rate:	 0.0010	[0m	
+[0mEpoch: [70][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.60	 [0m	
+[0mEpoch: [71][TRAINING SUMMARY] Total Time(s): 12.72	average loss (per batch): 0.02 	 accuracy(%):	 top-1 99.59	learning rate:	 0.0010	[0m	
+[0mEpoch: [71][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.64	 [0m	
+[0mEpoch: [72][TRAINING SUMMARY] Total Time(s): 12.79	average loss (per batch): 0.02 	 accuracy(%):	 top-1 99.53	learning rate:	 0.0010	[0m	
+[0mEpoch: [72][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [73][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.58	learning rate:	 0.0010	[0m	
+[0mEpoch: [73][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.59	 [0m	
+[0mEpoch: [74][TRAINING SUMMARY] Total Time(s): 12.78	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.64	learning rate:	 0.0010	[0m	
+[0mEpoch: [74][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.51	 [0m	
+[0mEpoch: [75][TRAINING SUMMARY] Total Time(s): 12.77	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.62	learning rate:	 0.0010	[0m	
+[0mEpoch: [75][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [76][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.68	learning rate:	 0.0010	[0m	
+[0mEpoch: [76][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.50	 [0m	
+[0mEpoch: [77][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.68	learning rate:	 0.0010	[0m	
+[0mEpoch: [77][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.55	 [0m	
+[0mEpoch: [78][TRAINING SUMMARY] Total Time(s): 12.73	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.69	learning rate:	 0.0010	[0m	
+[0mEpoch: [78][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.58	 [0m	
+[0mEpoch: [79][TRAINING SUMMARY] Total Time(s): 12.84	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.69	learning rate:	 0.0010	[0m	
+[0mEpoch: [79][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.58	 [0m	
+[0mEpoch: [80][TRAINING SUMMARY] Total Time(s): 12.72	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.68	learning rate:	 0.0010	[0m	
+[0mEpoch: [80][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [81][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.67	learning rate:	 0.0010	[0m	
+[0mEpoch: [81][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.85	 [0m	
+[0mEpoch: [82][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.70	learning rate:	 0.0010	[0m	
+[0mEpoch: [82][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.89	 [0m	
+[0mEpoch: [83][TRAINING SUMMARY] Total Time(s): 12.78	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.71	learning rate:	 0.0010	[0m	
+[0mEpoch: [83][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.84	 [0m	
+[0mEpoch: [84][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.72	learning rate:	 0.0010	[0m	
+[0mEpoch: [84][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [85][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.75	learning rate:	 0.0010	[0m	
+[0mEpoch: [85][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [86][TRAINING SUMMARY] Total Time(s): 12.76	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.72	learning rate:	 0.0010	[0m	
+[0mEpoch: [86][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [87][TRAINING SUMMARY] Total Time(s): 12.75	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.76	learning rate:	 0.0010	[0m	
+[0mEpoch: [87][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.86	 [0m	
+[0mEpoch: [88][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.75	learning rate:	 0.0010	[0m	
+[0mEpoch: [88][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.53	 [0m	
+[0mEpoch: [89][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.73	learning rate:	 0.0010	[0m	
+[0mEpoch: [89][TESTING SUMMARY] Total Time(s): 1.00 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.61	 [0m	
+[0mEpoch: [90][TRAINING SUMMARY] Total Time(s): 12.73	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.77	learning rate:	 0.0010	[0m	
+[0mEpoch: [90][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [91][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.78	learning rate:	 0.0010	[0m	
+[0mEpoch: [91][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.92	 [0m	
+[0mEpoch: [92][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.78	learning rate:	 0.0010	[0m	
+[0mEpoch: [92][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [93][TRAINING SUMMARY] Total Time(s): 12.78	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.73	learning rate:	 0.0010	[0m	
+[0mEpoch: [93][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.62	 [0m	
+[0mEpoch: [94][TRAINING SUMMARY] Total Time(s): 12.69	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.76	learning rate:	 0.0010	[0m	
+[0mEpoch: [94][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.60	 [0m	
+[0mEpoch: [95][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.78	learning rate:	 0.0010	[0m	
+[0mEpoch: [95][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.62	 [0m	
+[0mEpoch: [96][TRAINING SUMMARY] Total Time(s): 12.72	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.80	learning rate:	 0.0010	[0m	
+[0mEpoch: [96][TESTING SUMMARY] Total Time(s): 1.04 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.66	 [0m	
+[0mEpoch: [97][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.78	learning rate:	 0.0010	[0m	
+[0mEpoch: [97][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [98][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.78	learning rate:	 0.0010	[0m	
+[0mEpoch: [98][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.50	 [0m	
+[0mEpoch: [99][TRAINING SUMMARY] Total Time(s): 12.78	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.77	learning rate:	 0.0010	[0m	
+[0mEpoch: [99][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.66	 [0m	
+[0mEpoch: [100][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.80	learning rate:	 0.0010	[0m	
+[0mEpoch: [100][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [101][TRAINING SUMMARY] Total Time(s): 12.69	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [101][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [102][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.82	learning rate:	 0.0010	[0m	
+[0mEpoch: [102][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.83	 [0m	
+[0mEpoch: [103][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.79	learning rate:	 0.0010	[0m	
+[0mEpoch: [103][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [104][TRAINING SUMMARY] Total Time(s): 12.74	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [104][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [105][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.81	learning rate:	 0.0010	[0m	
+[0mEpoch: [105][TESTING SUMMARY] Total Time(s): 0.89 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [106][TRAINING SUMMARY] Total Time(s): 12.69	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.82	learning rate:	 0.0010	[0m	
+[0mEpoch: [106][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.56	 [0m	
+[0mEpoch: [107][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.81	learning rate:	 0.0010	[0m	
+[0mEpoch: [107][TESTING SUMMARY] Total Time(s): 1.00 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.60	 [0m	
+[0mEpoch: [108][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.81	learning rate:	 0.0010	[0m	
+[0mEpoch: [108][TESTING SUMMARY] Total Time(s): 0.99 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [109][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.81	learning rate:	 0.0010	[0m	
+[0mEpoch: [109][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [110][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.78	learning rate:	 0.0010	[0m	
+[0mEpoch: [110][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [111][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.82	learning rate:	 0.0010	[0m	
+[0mEpoch: [111][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [112][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [112][TESTING SUMMARY] Total Time(s): 0.88 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.62	 [0m	
+[0mEpoch: [113][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.81	learning rate:	 0.0010	[0m	
+[0mEpoch: [113][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.61	 [0m	
+[0mEpoch: [114][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.85	learning rate:	 0.0010	[0m	
+[0mEpoch: [114][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.64	 [0m	
+[0mEpoch: [115][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.82	learning rate:	 0.0010	[0m	
+[0mEpoch: [115][TESTING SUMMARY] Total Time(s): 1.03 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [116][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.79	learning rate:	 0.0010	[0m	
+[0mEpoch: [116][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [117][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [117][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [118][TRAINING SUMMARY] Total Time(s): 12.69	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [118][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.89	 [0m	
+[0mEpoch: [119][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.82	learning rate:	 0.0010	[0m	
+[0mEpoch: [119][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [120][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [120][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [121][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.85	learning rate:	 0.0010	[0m	
+[0mEpoch: [121][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [122][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [122][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [123][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [123][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [124][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.82	learning rate:	 0.0010	[0m	
+[0mEpoch: [124][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.56	 [0m	
+[0mEpoch: [125][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.82	learning rate:	 0.0010	[0m	
+[0mEpoch: [125][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [126][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.82	learning rate:	 0.0010	[0m	
+[0mEpoch: [126][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [127][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.82	learning rate:	 0.0010	[0m	
+[0mEpoch: [127][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [128][TRAINING SUMMARY] Total Time(s): 12.69	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.86	learning rate:	 0.0010	[0m	
+[0mEpoch: [128][TESTING SUMMARY] Total Time(s): 0.99 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [129][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [129][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.64	 [0m	
+[0mEpoch: [130][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [130][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [131][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.85	learning rate:	 0.0010	[0m	
+[0mEpoch: [131][TESTING SUMMARY] Total Time(s): 1.00 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.60	 [0m	
+[0mEpoch: [132][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.81	learning rate:	 0.0010	[0m	
+[0mEpoch: [132][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [133][TRAINING SUMMARY] Total Time(s): 12.72	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.86	learning rate:	 0.0010	[0m	
+[0mEpoch: [133][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [134][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [134][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.80	 [0m	
+[0mEpoch: [135][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [135][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [136][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [136][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [137][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.85	learning rate:	 0.0010	[0m	
+[0mEpoch: [137][TESTING SUMMARY] Total Time(s): 0.99 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.62	 [0m	
+[0mEpoch: [138][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.86	learning rate:	 0.0010	[0m	
+[0mEpoch: [138][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.62	 [0m	
+[0mEpoch: [139][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.87	learning rate:	 0.0010	[0m	
+[0mEpoch: [139][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [140][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [140][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.66	 [0m	
+[0mEpoch: [141][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.82	learning rate:	 0.0010	[0m	
+[0mEpoch: [141][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [142][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.85	learning rate:	 0.0010	[0m	
+[0mEpoch: [142][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [143][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [143][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [144][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.82	learning rate:	 0.0010	[0m	
+[0mEpoch: [144][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.82	 [0m	
+[0mEpoch: [145][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.85	learning rate:	 0.0010	[0m	
+[0mEpoch: [145][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [146][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.85	learning rate:	 0.0010	[0m	
+[0mEpoch: [146][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.85	 [0m	
+[0mEpoch: [147][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [147][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.57	 [0m	
+[0mEpoch: [148][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.86	learning rate:	 0.0010	[0m	
+[0mEpoch: [148][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [149][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [149][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [150][TRAINING SUMMARY] Total Time(s): 12.69	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [150][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.82	 [0m	
+[0mEpoch: [151][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [151][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.80	 [0m	
+[0mEpoch: [152][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [152][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [153][TRAINING SUMMARY] Total Time(s): 12.72	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [153][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [154][TRAINING SUMMARY] Total Time(s): 12.69	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.79	learning rate:	 0.0010	[0m	
+[0mEpoch: [154][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [155][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.85	learning rate:	 0.0010	[0m	
+[0mEpoch: [155][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [156][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [156][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [157][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.81	learning rate:	 0.0010	[0m	
+[0mEpoch: [157][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.79 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [158][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [158][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [159][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.86	learning rate:	 0.0010	[0m	
+[0mEpoch: [159][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [160][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.87	learning rate:	 0.0010	[0m	
+[0mEpoch: [160][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [161][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [161][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.80	 [0m	
+[0mEpoch: [162][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.86	learning rate:	 0.0010	[0m	
+[0mEpoch: [162][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.80	 [0m	
+[0mEpoch: [163][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [163][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [164][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [164][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [165][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [165][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.51	 [0m	
+[0mEpoch: [166][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [166][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [167][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.87	learning rate:	 0.0010	[0m	
+[0mEpoch: [167][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.79 	 accuracy [Center](%):	 top-1 83.85	 [0m	
+[0mEpoch: [168][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [168][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.78 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [169][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.85	learning rate:	 0.0010	[0m	
+[0mEpoch: [169][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.60	 [0m	
+[0mEpoch: [170][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.81	learning rate:	 0.0010	[0m	
+[0mEpoch: [170][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.53	 [0m	
+[0mEpoch: [171][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [171][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [172][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [172][TESTING SUMMARY] Total Time(s): 1.00 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [173][TRAINING SUMMARY] Total Time(s): 12.72	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.85	learning rate:	 0.0010	[0m	
+[0mEpoch: [173][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [174][TRAINING SUMMARY] Total Time(s): 12.73	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.86	learning rate:	 0.0010	[0m	
+[0mEpoch: [174][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.83	 [0m	
+[0mEpoch: [175][TRAINING SUMMARY] Total Time(s): 12.69	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [175][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.59	 [0m	
+[0mEpoch: [176][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [176][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.79 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [177][TRAINING SUMMARY] Total Time(s): 12.73	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [177][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.79 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [178][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.83	learning rate:	 0.0010	[0m	
+[0mEpoch: [178][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.79 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [179][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.85	learning rate:	 0.0010	[0m	
+[0mEpoch: [179][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.79 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [180][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0010	[0m	
+[0mEpoch: [180][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.79 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [181][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.87	learning rate:	 0.0001	[0m	
+[0mEpoch: [181][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.79 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [182][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [182][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.79 	 accuracy [Center](%):	 top-1 83.85	 [0m	
+[0mEpoch: [183][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.87	learning rate:	 0.0001	[0m	
+[0mEpoch: [183][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.79 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [184][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.86	learning rate:	 0.0001	[0m	
+[0mEpoch: [184][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [185][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [185][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [186][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.84	learning rate:	 0.0001	[0m	
+[0mEpoch: [186][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.79 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [187][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.88	learning rate:	 0.0001	[0m	
+[0mEpoch: [187][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.86	 [0m	
+[0mEpoch: [188][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.88	learning rate:	 0.0001	[0m	
+[0mEpoch: [188][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [189][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.88	learning rate:	 0.0001	[0m	
+[0mEpoch: [189][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [190][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [190][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [191][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [191][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [192][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.88	learning rate:	 0.0001	[0m	
+[0mEpoch: [192][TESTING SUMMARY] Total Time(s): 0.99 	average loss (per batch): 0.80 	 accuracy [Center](%):	 top-1 83.84	 [0m	
+[0mEpoch: [193][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [193][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.82	 [0m	
+[0mEpoch: [194][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [194][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.85	 [0m	
+[0mEpoch: [195][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [195][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [196][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.88	learning rate:	 0.0001	[0m	
+[0mEpoch: [196][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [197][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [197][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [198][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [198][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [199][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.88	learning rate:	 0.0001	[0m	
+[0mEpoch: [199][TESTING SUMMARY] Total Time(s): 1.02 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [200][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.87	learning rate:	 0.0001	[0m	
+[0mEpoch: [200][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [201][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [201][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [202][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [202][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [203][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [203][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.87	 [0m	
+[0mEpoch: [204][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [204][TESTING SUMMARY] Total Time(s): 1.00 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.82	 [0m	
+[0mEpoch: [205][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [205][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.82	 [0m	
+[0mEpoch: [206][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.86	learning rate:	 0.0001	[0m	
+[0mEpoch: [206][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.81 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [207][TRAINING SUMMARY] Total Time(s): 12.69	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.88	learning rate:	 0.0001	[0m	
+[0mEpoch: [207][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.85	 [0m	
+[0mEpoch: [208][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.87	learning rate:	 0.0001	[0m	
+[0mEpoch: [208][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [209][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.88	learning rate:	 0.0001	[0m	
+[0mEpoch: [209][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [210][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [210][TESTING SUMMARY] Total Time(s): 0.89 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [211][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [211][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.82	 [0m	
+[0mEpoch: [212][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.87	learning rate:	 0.0001	[0m	
+[0mEpoch: [212][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [213][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.87	learning rate:	 0.0001	[0m	
+[0mEpoch: [213][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [214][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [214][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [215][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [215][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [216][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [216][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.82 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [217][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [217][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [218][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [218][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [219][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.88	learning rate:	 0.0001	[0m	
+[0mEpoch: [219][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [220][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [220][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [221][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [221][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.80	 [0m	
+[0mEpoch: [222][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [222][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [223][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [223][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [224][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [224][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [225][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.86	learning rate:	 0.0001	[0m	
+[0mEpoch: [225][TESTING SUMMARY] Total Time(s): 0.89 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [226][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [226][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [227][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [227][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.66	 [0m	
+[0mEpoch: [228][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [228][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [229][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [229][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [230][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [230][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.83 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [231][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [231][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [232][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [232][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [233][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [233][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [234][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [234][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [235][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [235][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [236][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [236][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [237][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [237][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [238][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [238][TESTING SUMMARY] Total Time(s): 1.03 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [239][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [239][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [240][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [240][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [241][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [241][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.84 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [242][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [242][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [243][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [243][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [244][TRAINING SUMMARY] Total Time(s): 12.50	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [244][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [245][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.86	learning rate:	 0.0001	[0m	
+[0mEpoch: [245][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [246][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.88	learning rate:	 0.0001	[0m	
+[0mEpoch: [246][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [247][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [247][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [248][TRAINING SUMMARY] Total Time(s): 12.52	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [248][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [249][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [249][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [250][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.88	learning rate:	 0.0001	[0m	
+[0mEpoch: [250][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [251][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [251][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [252][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [252][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [253][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [253][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [254][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [254][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [255][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [255][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [256][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [256][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [257][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [257][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [258][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [258][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [259][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [259][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [260][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [260][TESTING SUMMARY] Total Time(s): 0.89 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [261][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [261][TESTING SUMMARY] Total Time(s): 0.89 	average loss (per batch): 0.85 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [262][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [262][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [263][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [263][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [264][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [264][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [265][TRAINING SUMMARY] Total Time(s): 12.73	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [265][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [266][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [266][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.66	 [0m	
+[0mEpoch: [267][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [267][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [268][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [268][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.60	 [0m	
+[0mEpoch: [269][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [269][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [270][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [270][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.64	 [0m	
+[0mEpoch: [271][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [271][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [272][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [272][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [273][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [273][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [274][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [274][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [275][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [275][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [276][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [276][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [277][TRAINING SUMMARY] Total Time(s): 12.53	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [277][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.86 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [278][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [278][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [279][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [279][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [280][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [280][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [281][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [281][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [282][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [282][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [283][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [283][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [284][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [284][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [285][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [285][TESTING SUMMARY] Total Time(s): 0.99 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.62	 [0m	
+[0mEpoch: [286][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [286][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [287][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.88	learning rate:	 0.0001	[0m	
+[0mEpoch: [287][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [288][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [288][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [289][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [289][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [290][TRAINING SUMMARY] Total Time(s): 12.53	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [290][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [291][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [291][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [292][TRAINING SUMMARY] Total Time(s): 12.53	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.89	learning rate:	 0.0001	[0m	
+[0mEpoch: [292][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.87 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [293][TRAINING SUMMARY] Total Time(s): 12.52	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [293][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [294][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [294][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [295][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [295][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [296][TRAINING SUMMARY] Total Time(s): 12.50	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [296][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [297][TRAINING SUMMARY] Total Time(s): 12.52	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [297][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [298][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [298][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [299][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [299][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [300][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [300][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [301][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [301][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [302][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [302][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [303][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [303][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [304][TRAINING SUMMARY] Total Time(s): 12.50	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [304][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [305][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [305][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [306][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [306][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [307][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [307][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.58	 [0m	
+[0mEpoch: [308][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [308][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [309][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [309][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [310][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [310][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [311][TRAINING SUMMARY] Total Time(s): 12.53	average loss (per batch): 0.01 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [311][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.88	 [0m	
+[0mEpoch: [312][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [312][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [313][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [313][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [314][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [314][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [315][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [315][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [316][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [316][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [317][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [317][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.88 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [318][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [318][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [319][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [319][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.80	 [0m	
+[0mEpoch: [320][TRAINING SUMMARY] Total Time(s): 12.49	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [320][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.83	 [0m	
+[0mEpoch: [321][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [321][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.86	 [0m	
+[0mEpoch: [322][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [322][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [323][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [323][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [324][TRAINING SUMMARY] Total Time(s): 12.53	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [324][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [325][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [325][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [326][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [326][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [327][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [327][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [328][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [328][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [329][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [329][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [330][TRAINING SUMMARY] Total Time(s): 12.51	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [330][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [331][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [331][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [332][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [332][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.89 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [333][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [333][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [334][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [334][TESTING SUMMARY] Total Time(s): 1.00 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [335][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [335][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [336][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [336][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [337][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [337][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [338][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [338][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [339][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [339][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [340][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [340][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.66	 [0m	
+[0mEpoch: [341][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [341][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [342][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [342][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [343][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [343][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [344][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [344][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [345][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [345][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.80	 [0m	
+[0mEpoch: [346][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [346][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [347][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [347][TESTING SUMMARY] Total Time(s): 1.00 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [348][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [348][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [349][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [349][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [350][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [350][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [351][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [351][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [352][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [352][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [353][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [353][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [354][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [354][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [355][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [355][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.90 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [356][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [356][TESTING SUMMARY] Total Time(s): 0.99 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [357][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [357][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [358][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [358][TESTING SUMMARY] Total Time(s): 0.99 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [359][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [359][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [360][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.90	learning rate:	 0.0001	[0m	
+[0mEpoch: [360][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [361][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [361][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [362][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [362][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [363][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [363][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [364][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [364][TESTING SUMMARY] Total Time(s): 0.99 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [365][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [365][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [366][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [366][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [367][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [367][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [368][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [368][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [369][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [369][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.80	 [0m	
+[0mEpoch: [370][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [370][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [371][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [371][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [372][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [372][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [373][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [373][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [374][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [374][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.80	 [0m	
+[0mEpoch: [375][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [375][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.84	 [0m	
+[0mEpoch: [376][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [376][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [377][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [377][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.91 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [378][TRAINING SUMMARY] Total Time(s): 12.53	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [378][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [379][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [379][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [380][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [380][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [381][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [381][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.79	 [0m	
+[0mEpoch: [382][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [382][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [383][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.96	learning rate:	 0.0001	[0m	
+[0mEpoch: [383][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [384][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [384][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.64	 [0m	
+[0mEpoch: [385][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [385][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [386][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [386][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [387][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [387][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [388][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [388][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [389][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [389][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [390][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [390][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [391][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [391][TESTING SUMMARY] Total Time(s): 1.00 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [392][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [392][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [393][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.96	learning rate:	 0.0001	[0m	
+[0mEpoch: [393][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [394][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [394][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [395][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [395][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.80	 [0m	
+[0mEpoch: [396][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [396][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [397][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [397][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [398][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [398][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [399][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [399][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [400][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [400][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [401][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [401][TESTING SUMMARY] Total Time(s): 0.89 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [402][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [402][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [403][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [403][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [404][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [404][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [405][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [405][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [406][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [406][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.92 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [407][TRAINING SUMMARY] Total Time(s): 12.69	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [407][TESTING SUMMARY] Total Time(s): 0.99 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [408][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [408][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [409][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [409][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [410][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [410][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [411][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [411][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [412][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [412][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [413][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [413][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [414][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [414][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [415][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [415][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [416][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [416][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [417][TRAINING SUMMARY] Total Time(s): 12.53	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [417][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [418][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [418][TESTING SUMMARY] Total Time(s): 0.89 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [419][TRAINING SUMMARY] Total Time(s): 12.52	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [419][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [420][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [420][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [421][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [421][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [422][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [422][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [423][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [423][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [424][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [424][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [425][TRAINING SUMMARY] Total Time(s): 12.57	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [425][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [426][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [426][TESTING SUMMARY] Total Time(s): 1.00 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [427][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [427][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.93 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [428][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [428][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [429][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [429][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [430][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.96	learning rate:	 0.0001	[0m	
+[0mEpoch: [430][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.62	 [0m	
+[0mEpoch: [431][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [431][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [432][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [432][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.60	 [0m	
+[0mEpoch: [433][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [433][TESTING SUMMARY] Total Time(s): 0.99 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.66	 [0m	
+[0mEpoch: [434][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [434][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.60	 [0m	
+[0mEpoch: [435][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [435][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [436][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [436][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [437][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [437][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [438][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [438][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.64	 [0m	
+[0mEpoch: [439][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [439][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.69	 [0m	
+[0mEpoch: [440][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.96	learning rate:	 0.0001	[0m	
+[0mEpoch: [440][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [441][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [441][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [442][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [442][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.66	 [0m	
+[0mEpoch: [443][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [443][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [444][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [444][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.64	 [0m	
+[0mEpoch: [445][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [445][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [446][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [446][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [447][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [447][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [448][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [448][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [449][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [449][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [450][TRAINING SUMMARY] Total Time(s): 12.71	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [450][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [451][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [451][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [452][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [452][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [453][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.96	learning rate:	 0.0001	[0m	
+[0mEpoch: [453][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [454][TRAINING SUMMARY] Total Time(s): 12.70	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [454][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [455][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [455][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [456][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.91	learning rate:	 0.0001	[0m	
+[0mEpoch: [456][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [457][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [457][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.80	 [0m	
+[0mEpoch: [458][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [458][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [459][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [459][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [460][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [460][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.94 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [461][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [461][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [462][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [462][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [463][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [463][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [464][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [464][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.78	 [0m	
+[0mEpoch: [465][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [465][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.66	 [0m	
+[0mEpoch: [466][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.96	learning rate:	 0.0001	[0m	
+[0mEpoch: [466][TESTING SUMMARY] Total Time(s): 0.97 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.62	 [0m	
+[0mEpoch: [467][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [467][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [468][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.96	learning rate:	 0.0001	[0m	
+[0mEpoch: [468][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.68	 [0m	
+[0mEpoch: [469][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [469][TESTING SUMMARY] Total Time(s): 0.98 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.81	 [0m	
+[0mEpoch: [470][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [470][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [471][TRAINING SUMMARY] Total Time(s): 12.67	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [471][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.70	 [0m	
+[0mEpoch: [472][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [472][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [473][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [473][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.62	 [0m	
+[0mEpoch: [474][TRAINING SUMMARY] Total Time(s): 12.59	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [474][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [475][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [475][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.61	 [0m	
+[0mEpoch: [476][TRAINING SUMMARY] Total Time(s): 12.61	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [476][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [477][TRAINING SUMMARY] Total Time(s): 12.58	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [477][TESTING SUMMARY] Total Time(s): 0.99 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [478][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [478][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [479][TRAINING SUMMARY] Total Time(s): 12.54	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [479][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [480][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.96	learning rate:	 0.0001	[0m	
+[0mEpoch: [480][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.66	 [0m	
+[0mEpoch: [481][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [481][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [482][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [482][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [483][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [483][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [484][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.93	learning rate:	 0.0001	[0m	
+[0mEpoch: [484][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.67	 [0m	
+[0mEpoch: [485][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.96	learning rate:	 0.0001	[0m	
+[0mEpoch: [485][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.95 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [486][TRAINING SUMMARY] Total Time(s): 12.69	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [486][TESTING SUMMARY] Total Time(s): 0.99 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [487][TRAINING SUMMARY] Total Time(s): 12.55	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [487][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [488][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [488][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.74	 [0m	
+[0mEpoch: [489][TRAINING SUMMARY] Total Time(s): 12.56	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [489][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [490][TRAINING SUMMARY] Total Time(s): 12.66	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [490][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.65	 [0m	
+[0mEpoch: [491][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [491][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [492][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [492][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.75	 [0m	
+[0mEpoch: [493][TRAINING SUMMARY] Total Time(s): 12.64	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [493][TESTING SUMMARY] Total Time(s): 0.90 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.71	 [0m	
+[0mEpoch: [494][TRAINING SUMMARY] Total Time(s): 12.85	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [494][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.73	 [0m	
+[0mEpoch: [495][TRAINING SUMMARY] Total Time(s): 12.65	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.96	learning rate:	 0.0001	[0m	
+[0mEpoch: [495][TESTING SUMMARY] Total Time(s): 0.92 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.72	 [0m	
+[0mEpoch: [496][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.94	learning rate:	 0.0001	[0m	
+[0mEpoch: [496][TESTING SUMMARY] Total Time(s): 0.93 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [497][TRAINING SUMMARY] Total Time(s): 12.60	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.92	learning rate:	 0.0001	[0m	
+[0mEpoch: [497][TESTING SUMMARY] Total Time(s): 0.94 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.76	 [0m	
+[0mEpoch: [498][TRAINING SUMMARY] Total Time(s): 12.62	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [498][TESTING SUMMARY] Total Time(s): 0.95 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.77	 [0m	
+[0mEpoch: [499][TRAINING SUMMARY] Total Time(s): 12.68	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [499][TESTING SUMMARY] Total Time(s): 0.96 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.63	 [0m	
+[0mEpoch: [500][TRAINING SUMMARY] Total Time(s): 12.63	average loss (per batch): 0.00 	 accuracy(%):	 top-1 99.95	learning rate:	 0.0001	[0m	
+[0mEpoch: [500][TESTING SUMMARY] Total Time(s): 0.91 	average loss (per batch): 0.96 	 accuracy [Center](%):	 top-1 83.69	 [0m	
