@@ -1,0 +1,3 @@
+[submodule "imagenet/caffe"]
+	path = imagenet/caffe
+	url = https://github.com/yjxiong/caffe
