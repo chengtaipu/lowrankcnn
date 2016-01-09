@@ -1,42 +1,9 @@
 name: "CaffeNet"
-layer {
-  name: "data"
-  type: "Data"
-  top: "data"
-  top: "label"
-  include {
-    phase: TRAIN
-  }
-  transform_param {
-    mirror: true
-    crop_size: 227
-    mean_file: "external/exp/db/imagenet_mean.binaryproto"
-  }
-  data_param {
-    source: "external/exp/db/ilsvrc12_train_lmdb"
-    batch_size: 256
-    backend: LMDB
-  }
-}
-layer {
-  name: "data"
-  type: "Data"
-  top: "data"
-  top: "label"
-  include {
-    phase: TEST
-  }
-  transform_param {
-    mirror: false
-    crop_size: 227
-    mean_file: "external/exp/db/imagenet_mean.binaryproto"
-  }
-  data_param {
-    source: "external/exp/db/ilsvrc12_val_lmdb"
-    batch_size: 100
-    backend: LMDB
-  }
-}
+input: "data"
+input_dim: 100
+input_dim: 3
+input_dim: 227
+input_dim: 227
 layer {
   name: "conv1_v"
   type: "Convolution"
@@ -542,34 +509,4 @@ layer {
       value: 0.0
     }
   }
-}
-layer {
-  name: "accuracy_top1"
-  type: "Accuracy"
-  bottom: "fc8"
-  bottom: "label"
-  top: "accuracy_top1"
-  include {
-    phase: TEST
-  }
-}
-layer {
-  name: "accuracy_top5"
-  type: "Accuracy"
-  bottom: "fc8"
-  bottom: "label"
-  top: "accuracy_top5"
-  include {
-    phase: TEST
-  }
-  accuracy_param {
-    top_k: 5
-  }
-}
-layer {
-  name: "loss"
-  type: "SoftmaxWithLoss"
-  bottom: "fc8"
-  bottom: "label"
-  top: "loss"
 }
