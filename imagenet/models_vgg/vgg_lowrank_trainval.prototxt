@@ -16,7 +16,7 @@ layer {
   }
   data_param {
     source: "external/exp/db/ilsvrc12_train_lmdb"
-    batch_size: 32
+    batch_size: 64
     backend: LMDB
   }
 }
@@ -68,6 +68,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -97,6 +99,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -132,6 +136,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -161,6 +167,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -194,7 +202,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 48
+    num_output: 64
     weight_filler {
       type: "gaussian"
       std: 0.042
@@ -207,6 +215,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -236,6 +246,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -258,7 +270,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 48
+    num_output: 64
     weight_filler {
       type: "gaussian"
       std: 0.042
@@ -271,6 +283,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -300,6 +314,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -346,6 +362,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -375,6 +393,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -410,6 +430,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -439,6 +461,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -474,6 +498,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -503,6 +529,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -549,6 +577,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -578,6 +608,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -613,6 +645,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -642,6 +676,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -677,6 +713,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -706,6 +744,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -752,6 +792,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -781,6 +823,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -816,6 +860,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -845,6 +891,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -880,6 +928,8 @@ layer {
     pad_w: 0
     kernel_h: 3
     kernel_w: 1
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
@@ -909,6 +959,8 @@ layer {
     pad_w: 1
     kernel_h: 1
     kernel_w: 3
+    stride_h: 1
+    stride_w: 1
   }
 }
 layer {
