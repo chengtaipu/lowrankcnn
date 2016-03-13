@@ -25,8 +25,10 @@ You can also download some pretrained models
 And use the tool to convert them to low-rank ones
 
     python2 lowrank_approx.py \
-      --model models_vggnet/vggnet_deploy.prototxt \
-      --config models_vggnet/config.json \
-      --save_model models_vggnet/vggnet_lowrank_deploy.prototxt \
+      --model models_vgg/vgg_deploy.prototxt \
+      --config models_vgg/config.json \
+      --save_model models_vgg/vgg_lowrank_deploy.prototxt \
       --weights VGG_ILSVRC_16_layers.caffemodel \
-      --save_weights vggnet_lowrank.caffemodel
+      --save_weights vgg_lowrank.caffemodel
+
+After finetuning the lowrank model for about one epoch, its accuracy will be similar to the original model.

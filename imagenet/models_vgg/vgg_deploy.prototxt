@@ -1,5 +1,5 @@
 name: "VGGNet"
-input: "name"
+input: "data"
 input_dim: 1
 input_dim: 3
 input_dim: 224
@@ -489,17 +489,9 @@ layer {
   }
 }
 layer {
-  name: "gather"
-  type: "Gather"
-  bottom: "pool5"
-  bottom: "label"
-  top: "pool5_gathered"
-  top: "label_gathered"
-}
-layer {
   name: "fc6"
   type: "InnerProduct"
-  bottom: "pool5_gathered"
+  bottom: "pool5"
   top: "fc6"
   param {
     lr_mult: 1

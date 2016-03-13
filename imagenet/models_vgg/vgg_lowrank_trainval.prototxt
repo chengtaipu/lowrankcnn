@@ -202,7 +202,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 64
+    num_output: 48
     weight_filler {
       type: "gaussian"
       std: 0.042
@@ -270,7 +270,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 64
+    num_output: 48
     weight_filler {
       type: "gaussian"
       std: 0.042
