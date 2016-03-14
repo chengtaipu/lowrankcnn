@@ -32,3 +32,14 @@ And use the tool to convert them to low-rank ones
       --save_weights vgg_lowrank.caffemodel
 
 After finetuning the lowrank model for about one epoch, its accuracy will be similar to the original model.
+
+## Results
+
+The actual speedup could depend on the hardware and software implementation. Below are the results tested on a Titan Black with cuda-7.5 and cudnn-v4. The batch size is set to 256 for CaffeNet, and 32 for VGG16.
+
+|                  | Top-5 Acc. (%) | Time (ms) / iter | Actual speedup |
+|------------------|---------------:|-----------------:|---------------:|
+| CaffeNet         |          80.03 |              668 |              - |
+| CaffeNet-Lowrank |          79.66 |              307 |          2.18× |
+| VGG16            |          90.60 |             1570 |              - |
+| VGG16-Lowrank    |          90.31 |              759 |          2.07× |
