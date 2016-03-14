@@ -35,7 +35,7 @@ After finetuning the lowrank model for about one epoch, its accuracy will be sim
 
 ## Results
 
-The actual speedup could depend on the hardware and software implementation. Below are the results tested on a Titan Black with cuda-7.5 and cudnn-v4. The batch size is set to 256 for CaffeNet, and 32 for VGG16.
+The actual speedup could depend on the hardware and software implementation. Below are the results tested on a Titan Black with cuda-7.5 and cudnn-v4. The batch size is set to 256 for CaffeNet, and 32 for VGG16. The Average Forward-Backward time per minibatch is reported.
 
 |                  | Top-5 Acc. (%) | Time (ms) / iter | Actual speedup |
 |------------------|---------------:|-----------------:|---------------:|
