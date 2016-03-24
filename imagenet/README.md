@@ -4,6 +4,10 @@
 
 In this repository, we use a self-brewed caffe, which provides Batch Normalization and faster MPI-based parallel training. In case you don't need such features, you may replace it with your own caffe.
 
+To use the self-brewed caffe, please clone this repo recursively.
+
+    git clone --recursive https://github.com/chengtaipu/lowrankcnn.git
+
 The detailed installation instructions of the self-brewed caffe can be found [here](https://github.com/yjxiong/caffe).
 
 ## Make a low-rank net
